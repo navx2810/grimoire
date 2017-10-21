@@ -1,0 +1,9 @@
+{
+  "name": "grimoire",
+  "version": "0.0.1",
+  "description": "A web application for players of D&D 5E.",
+  "scripts": {
+  },
+  "author": "Matt Fetterman <navx2810@gmail.com>",
+  "license": "MIT"
+}
