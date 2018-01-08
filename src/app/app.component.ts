@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
-import { CharactersService } from "./characters.service"
 
 @Component({
-  selector: 'app-root',
-  templateUrl: "./app.html",
-  styles: []
+	selector: 'app-root',
+	template: `
+		<div grmColorVariance>
+			<grm-character-sheet></grm-character-sheet>
+		</div>
+	`,
+	styles: []
 })
 export class AppComponent {
-
-  constructor(public characterService: CharactersService) {
-  }
-
-  title = 'app';
-
-  get characters() {
-    return this.characterService.characters
-  }
+	title = 'app';
 }

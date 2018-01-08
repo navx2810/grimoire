@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@require "./vars.styl"
+
+hr
+  background primary
+  height 2px
+
+h3,h4,h5,p
+	color secondary
+
+h1, h2
+  color primary
+
+.flex
+  display flex
+  &.middle
+    align-items center
+  &.around
+    justify-content space-around
+
+ul.nav
+	a
+		text-transform uppercase
+		color #aaa
+		font-weight: 500
+		border-bottom: 1px solid #aaa
+		&.active
+			color primary
+			border-color primary
