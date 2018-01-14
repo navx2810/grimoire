@@ -3,9 +3,7 @@ import { Component } from '@angular/core';
 @Component({
 	selector: 'app-root',
 	template: `
-		<div grmColorVariance>
-			<grm-character-sheet></grm-character-sheet>
-		</div>
+		<router-outlet></router-outlet>
 	`,
 	styles: []
 })

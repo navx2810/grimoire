@@ -2,21 +2,24 @@
 @require "./vars.styl"
 
 hr
-  background primary
-  height 2px
+	background primary
+	height 2px
 
 h3,h4,h5,p
 	color secondary
 
 h1, h2
-  color primary
+	color primary
 
 .flex
-  display flex
-  &.middle
-    align-items center
-  &.around
-    justify-content space-around
+	display flex
+	&.middle
+		align-items center
+	&.around
+		justify-content space-around
+	&.center
+		justify-content center
+	
 
 ul.nav
 	a
@@ -27,3 +30,10 @@ ul.nav
 		&.active
 			color primary
 			border-color primary
+
+.full-screen
+	position absolute
+	top 0
+	right 0
+	left 0
+	bottom 0

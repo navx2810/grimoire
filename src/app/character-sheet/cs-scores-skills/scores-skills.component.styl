@@ -1,8 +1,14 @@
 @require "~vars"
 
+#info
+	> h4
+		font-weight: normal
+		strong
+			color white
 #scores
 	box-sizing border-box
 	.stat
+		width 90px
 		/* border-radius .25em */
 		box-sizing border-box
 		text-align center
@@ -21,10 +27,35 @@
 		color primary
 
 #skills
+	> div
+		margin 0 0.5em 0.25em 0.5em
+		border-bottom 2px solid primary
+		h3, h4
+			margin 0
+		h3:first-child
+			margin 0 .5em
+			color #444
+			font-weight: 400
+		h3+h3
+			flex 1 auto
+		div
+			border 2px solid primary
+			border-bottom: 0
+			h4
+				margin 0
+				padding 8px
+				&:first-child
+					background primary
+					color white
+				&:last-child
+					background white
+					color primary
+					width 50px
+					text-align: center
 	h3
 		margin 0 0.5em 0.25em 0.5em
 		padding-bottom 8px
-		border-bottom 2px solid primary
+		// border-bottom 2px solid primary
 	ul
 		margin 0 0.5em
 	li
