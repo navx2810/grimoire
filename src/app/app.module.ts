@@ -10,24 +10,26 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
-import { CharacterSheetComponent } from './character-sheet/character-sheet.component';
-import { ScoresSkillsComponent } from './character-sheet/cs-scores-skills/scores-skills.component';
-import { CsHeaderComponent } from './character-sheet/cs-header/cs-header.component';
 import { UserService } from './services/user.service';
 import { AuthComponent } from './components/auth/auth.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterCreatorComponent } from './component/character-creator/character-creator.component';
+import { CharacterSheetComponent } from './component/character-sheet/character-sheet.component';
+import { CsHeaderComponent } from './component/character-sheet/cs-header/cs-header.component';
+import { ScoresSkillsComponent } from './component/character-sheet/cs-scores-skills/scores-skills.component';
+import { CharacterService } from './services/character.service';
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'login', pathMatch: 'full' },
 	{ path: 'login', component: LoginComponent },
-	{ path: 'character', component: CharacterSheetComponent },
 	{ path: 'auth', component: AuthComponent },
-	{ path: 'characters' , children: [
+	{ path: 'character' , children: [
 		{ path: 'list', component: CharacterListComponent },
 		{ path: 'create', component: CharacterCreatorComponent },
 		{ path: 'new', redirectTo: 'create', pathMatch: 'full' },
-		{ path: '**', redirectTo: "list" },
+		{ path: 'edit/:id', component: CharacterCreatorComponent },
+		{ path: ':id', component: CharacterSheetComponent },
+		{ path: '**', redirectTo: "list" }
 	]}
 ]
 
@@ -53,7 +55,8 @@ const routes: Routes = [
 	],
 	providers: [
 		ColorsService,
-		UserService
+		UserService,
+		CharacterService
 	],
 	bootstrap: [AppComponent]
 })

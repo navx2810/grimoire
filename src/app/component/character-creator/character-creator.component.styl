@@ -10,6 +10,8 @@
 		font-weight 500
 		margin-top 0.5em
 	input, select 
+		text-align: center
+		text-align-last: center
 		border none
 		border-bottom: 2px solid primary
 		border-radius 0
@@ -26,6 +28,7 @@
 .checkbox
 	cursor pointer
 	display flex
+	background #fff
 	justify-content: center
 	align-items: center
 	width 2em
@@ -44,7 +47,12 @@
 	li
 		margin 1em
 		border-bottom: 1px solid primary
+		.flex
+			padding 0 0 0 1em
+		.prof
+			h5
+				color primary
+				font-weight: 500
 	h5
+		margin .5rem 0
 		font-weight: 400
-		&.bold
-			font-weight: 500

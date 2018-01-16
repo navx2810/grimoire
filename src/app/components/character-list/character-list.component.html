@@ -5,9 +5,24 @@
 				<h2>Character List</h2>
 			</div>
 			<div class="col text-right">
-				<button routerLink="/characters/create" class="btn btn-outline-success">Add +</button>
+				<button routerLink="/character/create" class="btn btn-outline-success">Add +</button>
 			</div>
 		</div>
 		<hr>
+		<ul class="list-unstyled">
+			<li *ngFor="let character of characters" class="">
+				<div class="row align-middle">
+					<div class="col">
+						<h3>{{character.meta.name}}</h3>
+					</div>
+					<div class="col text-right">
+						<div>
+							<button (click)="edit(character)" class="btn btn-outline-success">Edit</button>
+							<button (click)="select(character)" class="btn btn-outline-primary">Select</button>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
 	</header>
 </div>

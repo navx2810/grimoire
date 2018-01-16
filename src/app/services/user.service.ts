@@ -7,22 +7,27 @@ export type UserToken = { accessToken: string; userID: string };
 export class UserService {
 	private userToken: UserToken = null;
 
-	get user() { return this.userToken }
+	get user() {
+		return this.userToken;
+	}
 
 	constructor() {}
 
 	async TryToGetUser() {
-		let user
-		try { user = await this.checkLoginStatus() }
-		catch(e) {
-			try { user = await this.LogIn()} 
-			catch(e) {
-				console.error(e);
-				throw new Error("You could not log in.");
+		let user = this.userToken;
+		if (!user) {
+			try {
+				user = await this.checkLoginStatus();
+			} catch (e) {
+				try {
+					user = await this.LogIn();
+				} catch (e) {
+					console.error(e);
+					throw new Error("You could not log in.");
+				}
 			}
 		}
-
-		return this.userToken = user
+		return (this.userToken = user);
 	}
 
 	private checkLoginStatus() {

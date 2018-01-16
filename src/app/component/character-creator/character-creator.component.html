@@ -2,7 +2,7 @@
 	<header>
 		<div class="flex between middle">
 			<h2>Character Creator</h2>
-			<button routerLink="/characters/list" class="btn btn-outline-primary">List</button>
+			<button routerLink="/character/list" class="btn btn-outline-primary">List</button>
 		</div>
 		<hr>
 	</header>
@@ -104,8 +104,8 @@
 	<h3>Proficient Saving Throws</h3>
 	<ul class="list-unstyled">
 		<li *ngFor="let stat of stats">
-			<div class="flex between middle">
-				<h5 [class.bold]="stat.stat.proficientSave">{{stat.name}}</h5>
+			<div [class.prof]="stat.stat.proficientSave" class="flex between bottom">
+				<h5>{{stat.name}}</h5>
 				<div (click)="stat.stat.proficientSave = !stat.stat.proficientSave" class="checkbox">
 					<p *ngIf="stat.stat.proficientSave">&#10003;</p>
 				</div>
@@ -115,8 +115,8 @@
 	<h3>Proficient Skills</h3>
 	<ul class="list-unstyled">
 		<li *ngFor="let skill of skills">
-			<div class="flex between middle">
-				<h5 [class.bold]="skill.proficient">{{skill.name}}
+			<div [class.prof]="skill.proficient" class="flex between bottom">
+				<h5>{{skill.name}}
 					<small>
 						<em>({{skill.stat}})</em>
 					</small>

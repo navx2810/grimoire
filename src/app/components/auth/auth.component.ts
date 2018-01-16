@@ -18,7 +18,7 @@ export class AuthComponent implements OnInit {
 
 	ngOnInit() {
 		if(this.userSvc.user) {
-			this.router.navigate(['characters'])
+			this.router.navigate(['character'])
 		} else {
 			this.router.navigate(['login'])
 		}
