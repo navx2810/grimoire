@@ -1,9 +1,50 @@
 @require('~vars')
+
+.container
+	margin-bottom: 1em
 .form-group
+	&.short
+		max-width 16em
+		margin auto
 	label
 		font-weight 500
 		margin-top 0.5em
-	input 
+	input, select 
 		border none
 		border-bottom: 2px solid primary
 		border-radius 0
+
+#abilities
+	input 
+		width 2.5em
+		font-size 1.5em
+	label, input 
+		margin auto
+		text-align center
+		display block
+
+.checkbox
+	cursor pointer
+	display flex
+	justify-content: center
+	align-items: center
+	width 2em
+	height 2em
+	border 1px solid primary
+	border-bottom: 0
+	// border-radius 5px
+	text-align: center
+	p
+		margin 0
+		font-weight: bold
+		font-size 1.25em
+		color primary
+
+.list-unstyled
+	li
+		margin 1em
+		border-bottom: 1px solid primary
+	h5
+		font-weight: 400
+		&.bold
+			font-weight: 500

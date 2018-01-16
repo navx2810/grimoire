@@ -1,33 +1,133 @@
 <div class="container">
 	<header>
-		<div class="row middle">
-			<div class="col">
-				<h2>Character Creator</h2>
-			</div>
-			<div class="col text-right">
-				<button routerLink="/characters/create" class="btn btn-outline-success">Add +</button>
-			</div>
+		<div class="flex between middle">
+			<h2>Character Creator</h2>
+			<button routerLink="/characters/list" class="btn btn-outline-primary">List</button>
 		</div>
 		<hr>
 	</header>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<input placeholder="Character Name" type="text" class="form-control">
+				<input [(ngModel)]="character.name" placeholder="Character Name" type="text" class="form-control">
 				<label>Name</label>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<input placeholder="Character Race" type="text" class="form-control">
+				<input [(ngModel)]="character.race" placeholder="Character Race" type="text" class="form-control">
 				<label>Race</label>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<input placeholder="Character Class" type="text" class="form-control">
+				<input [(ngModel)]="character.class" placeholder="Character Class" type="text" class="form-control">
 				<label>Class</label>
 			</div>
 		</div>
+	</div>
+	<div class="row">
+		<div class="col-3">
+			<div class="form-group">
+				<input [(ngModel)]="health" placeholder="Health" type="text" class="form-control">
+				<label>Health</label>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="form-group">
+				<input [(ngModel)]="character.exp" placeholder="Experience" type="text" class="form-control">
+				<label>Experience</label>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="form-group">
+				<input [(ngModel)]="character.speed" placeholder="Speed" type="text" class="form-control">
+				<label>Speed</label>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="form-group">
+				<select [(ngModel)]="character.alignment" class="form-control">
+					<option value="LG">Lawful Good</option>
+					<option value="NG">Neutral Good</option>
+					<option value="CG">Chaotic Good</option>
+					<option value="LN">Lawful Neutral</option>
+					<option value="N">Neutral</option>
+					<option value="CN">Chaotic Neutral</option>
+					<option value="LE">Lawful Evil</option>
+					<option value="NE">Neutral Evil</option>
+					<option value="CE">Chaotic Evil</option>
+				</select>
+				<label>Alignment</label>
+			</div>
+		</div>
+	</div>
+	<h3>Abilities</h3>
+	<div id="abilities" class="row">
+		<div class="col-4 col-md-2">
+			<div class="form-group text-center">
+				<input [(ngModel)]="character.str.score" placeholder="STR" min="1" type="text">
+				<label>Strength</label>
+			</div>
+		</div>
+		<div class="col-4 col-md-2">
+			<div class="form-group text-center">
+				<input [(ngModel)]="character.dex.score" placeholder="DEX" min="1" type="text">
+				<label>Dexterity</label>
+			</div>
+		</div>
+		<div class="col-4 col-md-2">
+			<div class="form-group text-center">
+				<input [(ngModel)]="character.con.score" placeholder="CON" min="1" type="text">
+				<label>Constitution</label>
+			</div>
+		</div>
+		<div class="col-4 col-md-2">
+			<div class="form-group text-center">
+				<input [(ngModel)]="character.int.score" placeholder="INT" min="1" type="text">
+				<label>Intelligence</label>
+			</div>
+		</div>
+		<div class="col-4 col-md-2">
+			<div class="form-group text-center">
+				<input [(ngModel)]="character.wis.score" placeholder="WIS" min="1" type="text">
+				<label>Wisdom</label>
+			</div>
+		</div>
+		<div class="col-4 col-md-2">
+			<div class="form-group text-center">
+				<input [(ngModel)]="character.cha.score" placeholder="CHA" min="1" type="text">
+				<label>Charisma</label>
+			</div>
+		</div>
+	</div>
+	<h3>Proficient Saving Throws</h3>
+	<ul class="list-unstyled">
+		<li *ngFor="let stat of stats">
+			<div class="flex between middle">
+				<h5 [class.bold]="stat.stat.proficientSave">{{stat.name}}</h5>
+				<div (click)="stat.stat.proficientSave = !stat.stat.proficientSave" class="checkbox">
+					<p *ngIf="stat.stat.proficientSave">&#10003;</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<h3>Proficient Skills</h3>
+	<ul class="list-unstyled">
+		<li *ngFor="let skill of skills">
+			<div class="flex between middle">
+				<h5 [class.bold]="skill.proficient">{{skill.name}}
+					<small>
+						<em>({{skill.stat}})</em>
+					</small>
+				</h5>
+				<div (click)="skill.proficient = !skill.proficient" class="checkbox">
+					<p *ngIf="skill.proficient">&#10003;</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="text-right">
+		<button (click)="save(character)" title="Save your character" class="btn btn-success">Save</button>
 	</div>
 </div>

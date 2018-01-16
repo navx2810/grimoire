@@ -1,28 +1,26 @@
+import { Skills, Skill } from "./skills";
+
 export class Character {
-	id: string
-	user: string
-	userName: string
 	name: string
 	class: string
+	speed: string
 	exp: number = 0
-	hp: number
-	hpMax: number
-	hpTemp: number
-	deathSaveFails: number = 0
-	deathSaveSuccesses: number = 0
-	skills: object
-	str: number
-	strBonus: number
-	dex: number
-	dexBonus: number
-	con: number
-	conBonus: number
-	int: number
-	intBonus: number
-	wis: number
-	wisBonus: number
-	cha: number
-	chaBonus: number
+	hp = {
+		temp: 0,
+		current: 0,
+		max: 0
+	}
+	deathSaves = {
+		fails: 0,
+		successes: 0
+	}
+	skills: Skill[] = Object.assign([], Skills)
+	str = { score: 10, bonus: 0, proficientSave: false }
+	dex = { score: 10, bonus: 0, proficientSave: false }
+	con = { score: 10, bonus: 0, proficientSave: false }
+	int = { score: 10, bonus: 0, proficientSave: false }
+	wis = { score: 10, bonus: 0, proficientSave: false }
+	cha = { score: 10, bonus: 0, proficientSave: false }
 	inspiration: boolean = false
-	alignment: string
+	alignment: 'LG'|'NG'|'CG'|'LN'|'N'|'CN'|'LE'|'NE'|'CE' = "N"
 }

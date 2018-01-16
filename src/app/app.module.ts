@@ -7,6 +7,7 @@ import { SecondaryDirective } from './directives/secondary.directive';
 import { PrimaryDirective } from './directives/primary.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { CharacterSheetComponent } from './character-sheet/character-sheet.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
 	imports: [
 		BrowserModule,
 		HttpClientModule,
+		FormsModule,
 		RouterModule.forRoot(routes, { enableTracing: false })
 	],
 	providers: [
