@@ -27,25 +27,25 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-3">
+		<div class="col-md-3 col-6">
 			<div class="form-group">
 				<input [(ngModel)]="health" placeholder="Health" type="text" class="form-control">
 				<label>Health</label>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="col-md-3 col-6">
 			<div class="form-group">
 				<input [(ngModel)]="character.exp" placeholder="Experience" type="text" class="form-control">
 				<label>Experience</label>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="col-md-3 col-6">
 			<div class="form-group">
 				<input [(ngModel)]="character.speed" placeholder="Speed" type="text" class="form-control">
 				<label>Speed</label>
 			</div>
 		</div>
-		<div class="col-3">
+		<div class="col-md-3 col-6">
 			<div class="form-group">
 				<select [(ngModel)]="character.alignment" class="form-control">
 					<option value="LG">Lawful Good</option>
@@ -82,19 +82,19 @@
 				<label>Constitution</label>
 			</div>
 		</div>
-		<div class="col-4 col-md-2">
+		<div class="col col-4 col-md-2">
 			<div class="form-group text-center">
 				<input [(ngModel)]="character.int.score" placeholder="INT" min="1" type="text">
 				<label>Intelligence</label>
 			</div>
 		</div>
-		<div class="col-4 col-md-2">
+		<div class="col col-4 col-md-2">
 			<div class="form-group text-center">
 				<input [(ngModel)]="character.wis.score" placeholder="WIS" min="1" type="text">
 				<label>Wisdom</label>
 			</div>
 		</div>
-		<div class="col-4 col-md-2">
+		<div class="col col-4 col-md-2">
 			<div class="form-group text-center">
 				<input [(ngModel)]="character.cha.score" placeholder="CHA" min="1" type="text">
 				<label>Charisma</label>
