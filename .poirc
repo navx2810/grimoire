@@ -1,3 +1,9 @@
 {
-    "dist": "./public"
+    "dist": "./public",
+    "html": {
+        "template": "./app/index.html"
+    },
+    "presets": [
+        "poi-preset-typescript"
+    ]
 }
