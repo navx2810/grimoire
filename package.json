@@ -1,34 +1,26 @@
 {
-  "name": "grimoire",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "Grimoire",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/index.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve --proxy proxy.conf.json --open",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "poi"
   },
-  "private": true,
+  "keywords": [],
+  "author": "Matt Fetterman <navx2810@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@angular/animations": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/forms": "^5.0.0",
-    "@angular/http": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-browser-dynamic": "^5.0.0",
-    "@angular/router": "^5.0.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14"
+    "firebase": "^4.10.1",
+    "vue-class-component": "^6.2.0",
+    "vue-router": "^3.0.1",
+    "vuefire": "^1.4.5",
+    "vuetify": "^1.0.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.5.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/language-service": "^5.0.0",
-    "typescript": "~2.4.2"
+    "poi": "^9.6.13",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
   }
 }
