@@ -3,8 +3,8 @@ node_modules
 /coverage
 firebase-debug.log
 npm-debug.log
-package-lock.json
 .npmrc
+package-lock.json
 
 .DS_Store
 .idea
